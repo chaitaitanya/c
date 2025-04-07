@@ -152,6 +152,7 @@ function getData(location) {
     fetch(`${API_URL}${location}/?token=${API_KEY}`)
         .then(response => response.json())
         .then(data => {
+            console.log("air",data);
             if (data.status === 'ok') {
                 const myString = `${data.data.city.name}`;
                 const words = myString.trim().split(" ");
