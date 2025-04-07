@@ -261,11 +261,11 @@ function globalSearch(location) {
 // Function to get stored location or default location
 function getInitialLocation() {
     const storedLocation = localStorage.getItem("lastSearchLocation");
-    if (storedLocation) {
-        return storedLocation;
-    } else {
+    // if (storedLocation) {
+    //     return storedLocation;
+    // } else {
         return "New Delhi,India"; // Default location
-    }
+    // }
 }
 
 // Initial global search with stored or default location
