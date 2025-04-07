@@ -263,7 +263,7 @@ function getInitialLocation() {
     if (storedLocation) {
         return storedLocation;
     } else {
-        return "delhi,india"; // Default location
+        return "New Delhi,India"; // Default location
     }
 }
 
