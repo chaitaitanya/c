@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Today</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <div id="logo">
+                <svg width="65px" height="65px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><style>.a{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M18.4836,10.5044,22.0558,6.468l3.5472,4.0832,5.5837-2.1465v5.7316l5.603.5968-1.2536,5.3662m.8112,1.1061,3.2167,2.766-1.3961,1.1692m-6.9811,9.9533v4.3522l-5.6133-2.0933-3.51,4.1792-3.6253-4.1813-5.515,2.1024V33.84l-5.6545-.735,1.3575-5.7139L4.5,23.9649l4.1489-3.4977L7.3311,14.7539l5.5832-.6709v-5.62l5.5695,2.0408"/><path class="a" d="M36.7647,25.121C38.03,16.3527,25.3415,15.5337,23.93,23.5534c-3.0724-2.0573-6.9336.2154-6.208,3.8-7.2451.0576-6.19,7.48-1.96,7.6711H38.6338c6.18.1346,7.4129-9.5785-1.8691-9.9033L37,24.9872"/><path class="a" d="M12.9993,29.2087a9.9665,9.9665,0,0,1,16.08-11.2594"/></svg>
+            </div>
+            <div id="search-div">
+                <input type="text" placeholder="search area" id="location" name="location" value="Delhi">
+                <button id="btn"><img src="./img/211817_search_strong_icon.png" alt=""></button>
+            </div>
+            <li><a href="#weather-card">Weather</a></li>
+            <li><a href="#hourly-container">Hourly Forecast</a></li>
+            <li><a href="#aqi-container">Air Quality</a></li>
+            <li><a href="#radar-map">Map</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="weather-card" class="weather-card">
+            <!-- <input type="text" id="location" placeholder="search location"><button id="btn">search</button> -->
+            <h1 id="loc">Weather Today in <span id="location1"></span></h1>
+            <div class="temperature">
+                <p><span id="feels-like"></span></p>
+                <div class="sun-info">
+                    <img class="img" src="./img/sunrise.png" alt="Sunrise">
+                    <span id="sunrise"></span>
+                    <img class="img" src="./img/sunset-.png" alt="Sunset">
+                    <span id="sunset"></span>
+                </div>
+            </div>
+            <h2>All About Today</h2>
+            <div class="weather-details">
+                <table>
+
+                    <p><img class="img1" src="./img/wind.png" alt="Wind"> Wind: <span id="wind"></span></p>
+                    <p><img class="img1" src="./img/humidity.png" alt="Humidity"> Humidity: <span id="humidity"></span>
+                    </p>
+                    <p><img class="img1" src="./img/dew-point.png" alt="Dew Point"> Dew Point: <span
+                            id="dew-point"></span>
+                    </p>
+
+                    <p><img class="img1" src="./img/resilience.png" alt="Pressure"> Pressure: <span
+                            id="pressure"></span>
+                    </p>
+                    <p><img class="img1" src="./img/ultraviolet.png" alt="UV"> UV Index: <span id="uv-index"></span></p>
+                    <p><img class="img1" src="./img/visibility.png" alt="Visibility"> Visibility: <span
+                            id="visibility"></span></p>
+                    <p><img class="img1" src="./img/moon-phase-circular-weather-symbol.png" alt="Moon Phase"> Moon
+                        Phase:
+                        <span id="moon"></span>
+                    </p>
+                </table>
+            </div>
+
+
+
+            <div id="hourly-container" class="hourly-container">
+                <div class="weather-container">
+                    <div class="header">
+                        <h1>Hourly Fordcast</h1>
+                        <p id="location-name"></p>
+                    </div>
+                    <div class="hourly-data">
+                    </div>
+                </div>
+            </div>
+
+            <div id="aqi-container" class="aqi-container">
+                <h1>Air Quality Index</h1>
+                <!-- <input type="text" id="location" value="delhi"><button id="search-btn">search</button>
+                <div id="main"> -->
+                    <div id="qulity-box">
+                        <span id="qulity-1" class="qulity">AIR QULITY</span>
+                        <span id="place-location" class="qulity"></span>
+                    </div>
+                    <hr width="100%">
+                    <div id="air-box">
+                        <span id="air-aqi"></span>
+                        <span id="air-name"></span>
+                    </div>
+                    <p id="qulity-info"></p>
+                    <h2 id="comp"></h2>
+                    <div id="componentent">
+                        <div id="PM2.5">
+                        </div>
+                        <div id="PM10">
+                        </div>
+                        <div id="co">
+                        </div>
+                        <div id="o3">
+                        </div>
+                        <div id="no2">
+                        </div>
+                        <div id="so2">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <main>
+                <section class="radar-container">
+                    <iframe id="radar-map" src="" frameborder="0" width="800px" height="500px" allowfullscreen>
+                    </iframe>
+                </section>
+            </main>
+
+        </div>
+
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <!-- <script src="script.js"></script>   -->
+</body>
+<script src="script.js"></script>
+
+</html>
